@@ -1,0 +1,996 @@
+/* ================================================================
+   AdminLayout — Light Teal, Minimalis & Editorial
+   ================================================================ */
+
+.al-shell {
+    --teal: #0d9488;
+    --teal-soft: #e6f7f4;
+    --teal-text: #0a6b62;
+    --dark: #071a12;
+    --text: #0a0a0a;
+    --text-2: #6b7280;
+    --text-3: #a3a3a3;
+    --border: #ededed;
+    --bg: #f9fbf9;
+    --surface: #ffffff;
+    --r-xs: 6px;
+    --r-sm: 10px;
+    --r-md: 12px;
+    --r-lg: 18px;
+    --tr: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ── SIDEBAR ── */
+.al-sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Logo — gambar */
+.al-logo {
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+}
+
+.al-logo-img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Nav section */
+.al-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.al-nav-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--text-3);
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+
+.al-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: var(--r-xs);
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--tr);
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+}
+
+.al-nav-item:hover {
+    background: #f5f5f5;
+    color: var(--text);
+}
+
+.al-nav-item.active {
+    background: var(--teal-soft);
+    color: var(--teal-text);
+}
+
+.al-nav-item.active svg {
+    color: var(--teal);
+}
+
+.al-nav-pip {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* User */
+.al-user {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 6px;
+    border-radius: var(--r-sm);
+    background: #f9f9f9;
+    transition: var(--tr);
+}
+
+.al-user:hover {
+    background: #f3f3f3;
+}
+
+.al-user-av {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--r-xs);
+    background: var(--dark);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+}
+
+.al-user-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.al-user-meta p {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.al-user-meta span {
+    font-size: 0.65rem;
+    color: var(--teal);
+    font-weight: 500;
+}
+
+.al-user-logout {
+    padding: 5px;
+    border-radius: var(--r-xs);
+    border: none;
+    background: transparent;
+    color: var(--text-3);
+    cursor: pointer;
+    transition: var(--tr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.al-user-logout:hover {
+    color: #ef4444;
+    background: #fef2f2;
+}
+
+/* ── MAIN ── */
+.al-main {
+    background: var(--bg);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Topbar */
+.al-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    gap: 1rem;
+}
+
+.al-search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f5f5f5;
+    border-radius: var(--r-xs);
+    padding: 7px 10px;
+    max-width: 260px;
+    width: 100%;
+    transition: var(--tr);
+    color: var(--text-3);
+}
+
+.al-search:focus-within {
+    background: var(--surface);
+    box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15);
+    color: var(--text-2);
+}
+
+.al-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.78rem;
+    color: var(--text);
+    width: 100%;
+    font-family: inherit;
+}
+
+.al-search input::placeholder {
+    color: var(--text-3);
+}
+
+.al-search kbd {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: #e9e9e9;
+    color: var(--text-3);
+    font-family: inherit;
+    border: 1px solid #d4d4d4;
+    white-space: nowrap;
+}
+
+.al-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.al-topbar-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--r-xs);
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--tr);
+}
+
+.al-topbar-btn:hover {
+    background: #f5f5f5;
+    color: var(--text);
+}
+
+.al-topbar-user {
+    width: auto;
+    gap: 4px;
+    padding: 0 6px;
+}
+
+.al-tb-av {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--teal-soft);
+    color: var(--teal-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.al-chevron {
+    transition: transform var(--tr);
+}
+
+.al-chevron.open {
+    transform: rotate(180deg);
+}
+
+/* ── DROPDOWN PROFIL ── */
+.al-profile-wrap {
+    position: relative;
+}
+
+.al-profile-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 19;
+}
+
+.al-profile-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 200px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 6px;
+    z-index: 20;
+    animation: al-dropdown-in 0.15s ease;
+}
+
+@keyframes al-dropdown-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.al-profile-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px 10px;
+}
+
+.al-profile-av {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--r-xs);
+    background: var(--dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.al-profile-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.al-profile-role {
+    font-size: 0.68rem;
+    color: var(--text-3);
+    margin-top: 1px;
+}
+
+.al-profile-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2px 0;
+}
+
+.al-profile-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 7px 8px;
+    border: none;
+    background: transparent;
+    border-radius: var(--r-xs);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: var(--tr);
+    font-family: inherit;
+    text-align: left;
+}
+
+.al-profile-item:hover {
+    background: #f5f5f5;
+    color: var(--text);
+}
+
+.al-profile-item--danger {
+    color: #ef4444;
+}
+
+.al-profile-item--danger:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* ── MODAL KONFIRMASI LOGOUT ── */
+.al-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: al-fade-in 0.15s ease;
+}
+
+@keyframes al-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.al-modal {
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    padding: 28px 24px 24px;
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    animation: al-modal-in 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes al-modal-in {
+    from {
+        opacity: 0;
+        transform: scale(0.94) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.al-modal-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fef3c7;
+    color: #d97706;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.al-modal h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+}
+
+.al-modal p {
+    font-size: 0.78rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    margin: 4px 0 12px;
+}
+
+.al-modal-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.al-modal-cancel {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: var(--r-xs);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: var(--tr);
+    font-family: inherit;
+}
+
+.al-modal-cancel:hover {
+    background: #f5f5f5;
+    color: var(--text);
+}
+
+.al-modal-confirm {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: var(--r-xs);
+    border: none;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--tr);
+    font-family: inherit;
+}
+
+.al-modal-confirm:hover {
+    background: #dc2626;
+}
+
+.al-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: var(--r-xs);
+    border: none;
+    background: transparent;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--tr);
+}
+
+.al-modal-close:hover {
+    background: #f5f5f5;
+    color: var(--text);
+}
+
+/* ── CONTENT ── */
+.al-content {
+    padding: 28px 24px;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Hero */
+.al-hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.al-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--teal-text);
+    background: var(--teal-soft);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+}
+
+.al-hero-text h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.al-hero-text p {
+    font-size: 0.8rem;
+    color: var(--text-2);
+    line-height: 1.5;
+}
+
+.al-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border-radius: var(--r-xs);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--tr);
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.al-hero-btn:hover {
+    background: #f5f5f5;
+    border-color: #d4d4d4;
+}
+
+.al-hero-btn svg {
+    color: var(--teal);
+}
+
+/* ── METRICS ── */
+.al-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.al-metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: var(--tr);
+}
+
+.al-metric:hover {
+    box-shadow: 0 4px 20px rgba(10, 26, 15, 0.06);
+}
+
+.al-metric-dark {
+    background: var(--dark);
+    border-color: var(--dark);
+}
+
+.al-metric-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.al-metric-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--r-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.al-icon-teal {
+    background: var(--teal-soft);
+    color: var(--teal);
+}
+
+.al-icon-lime {
+    background: #1a2e20;
+    color: #4ade80;
+}
+
+.al-icon-green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.al-metric-trend {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #059669;
+}
+
+.al-trend-light {
+    color: #4ade80;
+}
+
+.al-metric-val {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.al-val-light {
+    color: #fafafa;
+}
+
+.al-metric-unit {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-3);
+    margin-left: 1px;
+    vertical-align: super;
+}
+
+.al-unit-light {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.al-metric-label {
+    font-size: 0.72rem;
+    color: var(--text-2);
+    font-weight: 450;
+}
+
+.al-label-light {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── PANEL ── */
+.al-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+}
+
+.al-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.al-panel-head h3 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.al-panel-head p {
+    font-size: 0.72rem;
+    color: var(--text-3);
+}
+
+.al-panel-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tabs */
+.al-tabs {
+    display: flex;
+    background: #f5f5f5;
+    border-radius: var(--r-xs);
+    padding: 2px;
+    gap: 1px;
+}
+
+.al-tab {
+    padding: 4px 10px;
+    border-radius: var(--r-xs);
+    border: none;
+    background: transparent;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: var(--tr);
+    font-family: inherit;
+}
+
+.al-tab.active {
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.al-panel-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--r-xs);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--tr);
+}
+
+.al-panel-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Panel body */
+.al-panel-body {
+    padding: 20px;
+}
+
+/* Chart */
+.al-chart {
+    display: flex;
+    gap: 12px;
+    height: 200px;
+}
+
+.al-chart-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: var(--text-3);
+    padding-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.al-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.al-chart-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+}
+
+.al-chart-bar-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.al-chart-bar {
+    width: 100%;
+    max-width: 32px;
+    border-radius: 4px 4px 0 0;
+    background: var(--teal-soft);
+    transition: background var(--tr);
+    position: relative;
+    cursor: pointer;
+}
+
+.al-chart-bar:hover,
+.al-chart-bar.peak {
+    background: var(--teal);
+}
+
+.al-bar-tip {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text);
+    opacity: 0;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+}
+
+.al-chart-bar:hover .al-bar-tip {
+    opacity: 1;
+}
+
+.al-chart-x {
+    font-size: 0.65rem;
+    color: var(--text-3);
+    font-weight: 500;
+}
+
+/* Summary */
+.al-chart-summary {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.al-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-2);
+}
+
+.al-summary-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--dark);
+    flex-shrink: 0;
+}
+
+.al-dot-teal {
+    background: var(--teal);
+}
+
+.al-summary-item strong {
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+    .al-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .al-sidebar {
+        display: none;
+    }
+
+    .al-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .al-content {
+        padding: 20px 16px;
+    }
+
+    .al-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .al-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .al-panel-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .al-panel-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .al-chart {
+        height: 150px;
+    }
+
+    .al-modal {
+        max-width: calc(100vw - 32px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .al-shell *,
+    .al-shell *::before,
+    .al-shell *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

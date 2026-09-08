@@ -1,0 +1,446 @@
+/* Input.css - Clean White Modern Style */
+
+/* ====== Container ====== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.input-group.input-full-width {
+    width: 100%;
+}
+
+.input-group.input-inline {
+    width: auto;
+    display: inline-flex;
+}
+
+/* ====== Label ====== */
+.input-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease;
+}
+
+.input-label-left .input-label {
+    min-width: 120px;
+    padding-top: 10px;
+}
+
+.input-required {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+/* ====== Wrapper ====== */
+.input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.input-field-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Hover state */
+.input-field-wrap:not(.is-disabled):not(.is-readonly):hover {
+    border-color: #d1d5db;
+}
+
+/* Focus state */
+.input-field-wrap.is-focused {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* Error state */
+.input-field-wrap.has-error {
+    border-color: #ef4444;
+}
+
+.input-field-wrap.has-error.is-focused {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+}
+
+/* Success state */
+.input-field-wrap.has-success {
+    border-color: #16a34a;
+}
+
+.input-field-wrap.has-success.is-focused {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.08);
+}
+
+/* Disabled state */
+.input-field-wrap.is-disabled {
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+/* Readonly state */
+.input-field-wrap.is-readonly {
+    background-color: #fafbfc;
+    border-color: #e5e7eb;
+}
+
+/* Has value state */
+.input-field-wrap.has-value {
+    border-color: #d1d5db;
+}
+
+/* ====== Input Field ====== */
+.input-field {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #1a1a1a;
+    background-color: transparent;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input-field::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.input-field:disabled {
+    cursor: not-allowed;
+    color: #9ca3af;
+}
+
+.input-field:read-only {
+    cursor: default;
+    color: #4b5563;
+}
+
+/* Remove number spinner */
+.input-field[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.input-field[type='number']::-webkit-outer-spin-button,
+.input-field[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Autofill styles */
+.input-field:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+}
+
+/* ====== Size Variants ====== */
+.input-size-small .input-field {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.input-size-small .input-prefix,
+.input-size-small .input-suffix {
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.input-size-large .input-field {
+    padding: 13px 18px;
+    font-size: 16px;
+}
+
+.input-size-large .input-prefix,
+.input-size-large .input-suffix {
+    font-size: 15px;
+    padding: 0 14px;
+}
+
+/* ====== Prefix & Suffix ====== */
+.input-prefix,
+.input-suffix {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    color: #6b7280;
+    user-select: none;
+}
+
+.input-prefix {
+    padding-left: 14px;
+    padding-right: 6px;
+}
+
+.input-suffix {
+    padding-right: 14px;
+    padding-left: 6px;
+}
+
+/* ====== Clear Button ====== */
+.input-clear-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.input-clear-btn:hover {
+    background: #e5e7eb;
+    color: #1a1a1a;
+}
+
+.input-clear-btn:active {
+    transform: scale(0.9);
+}
+
+.input-clear-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ====== Password Toggle ====== */
+.input-password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.input-password-toggle:hover {
+    color: #4b5563;
+}
+
+.input-password-toggle:active {
+    transform: scale(0.9);
+}
+
+.input-password-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ====== Counter ====== */
+.input-counter {
+    position: absolute;
+    right: 12px;
+    bottom: -20px;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+/* ====== Messages ====== */
+.input-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 2px;
+}
+
+.input-message {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    animation: slideDown 0.2s ease;
+}
+
+.input-message-error {
+    color: #dc2626;
+}
+
+.input-message-help {
+    color: #6b7280;
+}
+
+.input-message-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.input-message-error .input-message-icon {
+    color: #ef4444;
+}
+
+.input-message-help .input-message-icon {
+    color: #6b7280;
+}
+
+/* ====== Animations ====== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== Inline Layout ====== */
+.input-group.input-inline-mode {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-group.input-inline-mode .input-label {
+    margin-bottom: 0;
+    padding-top: 0;
+    white-space: nowrap;
+}
+
+/* ====== Label Left Layout ====== */
+.input-group.input-label-left {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.input-group.input-label-left .input-label {
+    padding-top: 10px;
+    min-width: 100px;
+}
+
+.input-group.input-label-left .input-wrapper {
+    flex: 1;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .input-group.input-label-left {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .input-group.input-label-left .input-label {
+        padding-top: 0;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-field {
+        padding: 9px 12px;
+        font-size: 14px;
+    }
+
+    .input-size-large .input-field {
+        padding: 11px 14px;
+        font-size: 15px;
+    }
+
+    .input-size-small .input-field {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .input-prefix {
+        padding-left: 12px;
+    }
+
+    .input-suffix {
+        padding-right: 12px;
+    }
+
+    .input-clear-btn {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+
+    .input-clear-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .input-password-toggle {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+
+    .input-password-toggle svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .input-message {
+        font-size: 12px;
+    }
+}
+
+/* ====== Dark Mode Support ====== */
+@media (prefers-color-scheme: dark) {
+    .input-field-wrap {
+        background-color: #ffffff;
+    }
+
+    .input-field {
+        color: #1a1a1a;
+    }
+
+    .input-field::placeholder {
+        color: #9ca3af;
+    }
+
+    .input-label {
+        color: #1a1a1a;
+    }
+}
+
+/* ====== Print Styles ====== */
+@media print {
+    .input-field-wrap {
+        border-color: #d1d5db !important;
+        box-shadow: none !important;
+    }
+
+    .input-clear-btn,
+    .input-password-toggle {
+        display: none !important;
+    }
+
+    .input-message-error {
+        color: #000 !important;
+    }
+}   

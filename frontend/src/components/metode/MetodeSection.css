@@ -1,0 +1,525 @@
+/* ================================================================
+   MetodeSection — Konsep & Metrik
+   ================================================================ */
+
+.mts {
+    padding: 8rem 6% 10rem;
+    background: #fafdfb;
+    position: relative;
+}
+
+.mts-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ── HEADER ── */
+.mts-header {
+    margin-bottom: 5rem;
+}
+
+.mts-overline {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #0d9488;
+    margin-bottom: 1.25rem;
+}
+
+.mts-title {
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #071a12;
+    margin: 0 0 1.25rem 0;
+}
+
+.mts-sub {
+    font-size: 1rem;
+    color: #52645b;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ── BLOCK ── */
+.mts-block {
+    padding: 2rem 0;
+}
+
+.mts-block-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mts-block-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #fff;
+    border: 2px solid rgba(10, 26, 15, 0.08);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0d9488;
+    flex-shrink: 0;
+}
+
+.mts-block-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #071a12;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.mts-block-text {
+    font-size: 0.92rem;
+    color: #52645b;
+    line-height: 1.8;
+    margin: 0 0 1.5rem 0;
+}
+
+/* ── DIVIDER ── */
+.mts-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(10, 26, 15, 0.06);
+}
+
+/* ── RUMUS ── */
+.mts-rumus {
+    margin-bottom: 1.5rem;
+}
+
+.mts-rumus-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8a9e94;
+    margin-bottom: 0.6rem;
+}
+
+.mts-rumus-box {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background: #fff;
+    border: 1px solid rgba(10, 26, 15, 0.08);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    color: #0d9488;
+    font-weight: 600;
+}
+
+.mts-rumus-ket {
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    color: #8a9e94;
+}
+
+.mts-rumus-ket span {
+    font-weight: 600;
+    color: #52645b;
+}
+
+/* ── ILUSTRASI SMA ── */
+.mts-ilus {
+    background: #fff;
+    border: 1px solid rgba(10, 26, 15, 0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.mts-ilus-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8a9e94;
+    margin-bottom: 1rem;
+}
+
+.mts-ilus-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mts-ilus-months {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 100px;
+}
+
+.mts-ilus-month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.mts-ilus-month-bar {
+    width: 32px;
+    background: linear-gradient(180deg, #22c55e, #16a34a);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease;
+}
+
+.mts-ilus-month-label {
+    font-size: 0.62rem;
+    color: #8a9e94;
+    font-weight: 600;
+}
+
+.mts-ilus-arrow {
+    color: #0d9488;
+    flex-shrink: 0;
+    margin-bottom: 22px;
+}
+
+.mts-ilus-arrow svg {
+    width: 28px;
+    height: 28px;
+}
+
+.mts-ilus-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    height: 100px;
+    justify-content: flex-end;
+}
+
+.mts-ilus-result-bar {
+    width: 32px;
+    background: linear-gradient(180deg, #0d9488, #0f766e);
+    border-radius: 4px 4px 0 0;
+    border: 2px dashed rgba(13, 148, 136, 0.4);
+}
+
+.mts-ilus-result-label {
+    font-size: 0.62rem;
+    color: #0d9488;
+    font-weight: 700;
+}
+
+.mts-ilus-result-val {
+    font-size: 0.55rem;
+    color: #0d9488;
+    font-weight: 600;
+}
+
+.mts-ilus-calc {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #52645b;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(10, 26, 15, 0.05);
+}
+
+.mts-ilus-calc strong {
+    color: #0d9488;
+}
+
+/* ── METRIK GRID ── */
+.mts-metrik-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.mts-metrik-card {
+    border: 1px solid rgba(10, 26, 15, 0.07);
+    border-radius: 14px;
+    padding: 1.25rem;
+    background: #fff;
+}
+
+.mts-metrik-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+}
+
+.mts-metrik-card-nama {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #071a12;
+}
+
+.mts-metrik-card-nilai {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0d9488;
+}
+
+.mts-metrik-card-panjang {
+    font-size: 0.62rem;
+    color: #8a9e94;
+    margin-bottom: 0.75rem;
+}
+
+.mts-metrik-card-desc {
+    font-size: 0.75rem;
+    color: #52645b;
+    line-height: 1.6;
+    margin: 0 0 0.75rem 0;
+}
+
+.mts-metrik-card-interp {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: #0d9488;
+    line-height: 1.5;
+}
+
+.mts-metrik-card-interp svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* ── PERIODE GRID ── */
+.mts-periode-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.mts-periode-card {
+    border: 1px solid rgba(10, 26, 15, 0.07);
+    border-radius: 14px;
+    padding: 1.25rem;
+    background: #fff;
+}
+
+.mts-periode-card--best {
+    border-color: rgba(13, 148, 136, 0.35);
+    background: #f0fdf4;
+}
+
+.mts-periode-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.mts-periode-card-nama {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #071a12;
+}
+
+.mts-periode-card-karakter {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: #059669;
+    background: #d1fae5;
+    padding: 3px 8px;
+    border-radius: 100px;
+}
+
+.mts-periode-card--best .mts-periode-card-karakter {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.mts-periode-card-desc {
+    font-size: 0.75rem;
+    color: #52645b;
+    line-height: 1.6;
+    margin: 0 0 0.75rem 0;
+}
+
+.mts-periode-card-mape {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mts-periode-card-mape-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8a9e94;
+}
+
+.mts-periode-card-mape-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #071a12;
+}
+
+/* ── INFO BOX ── */
+.mts-info-box {
+    display: flex;
+    gap: 10px;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    background: #f0fdf4;
+    border: 1px solid rgba(13, 148, 136, 0.12);
+}
+
+.mts-info-box-icon {
+    width: 18px;
+    height: 18px;
+    color: #0d9488;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.mts-info-box-content {
+    font-size: 0.8rem;
+    color: #52645b;
+    line-height: 1.6;
+}
+
+.mts-info-box-content strong {
+    color: #0d9488;
+}
+
+/* ── CONFIDENCE ILLUSTRATION ── */
+.mts-confidence-ilus {
+    background: #fff;
+    border: 1px solid rgba(10, 26, 15, 0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.mts-confidence-ilus-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8a9e94;
+}
+
+.mts-confidence-ilus-bar {
+    position: relative;
+}
+
+.mts-confidence-ilus-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(10, 26, 15, 0.06);
+    border-radius: 3px;
+}
+
+.mts-confidence-ilus-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #0d9488, #14b8a6);
+    border-radius: 3px;
+}
+
+.mts-confidence-ilus-dots {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #3a4a40;
+}
+
+.mts-confidence-ilus-formula {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(10, 26, 15, 0.05);
+    font-size: 0.8rem;
+    color: #52645b;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .mts {
+        padding: 6rem 5% 8rem;
+    }
+
+    .mts-metrik-grid,
+    .mts-periode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mts-ilus-box {
+        gap: 0.75rem;
+    }
+
+    .mts-ilus-month-bar {
+        width: 24px;
+    }
+
+    .mts-ilus-result-bar {
+        width: 24px;
+    }
+
+    .mts-ilus-arrow svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 520px) {
+    .mts {
+        padding: 4rem 4% 6rem;
+    }
+
+    .mts-block-head {
+        gap: 0.75rem;
+    }
+
+    .mts-block-num {
+        width: 36px;
+        height: 36px;
+        font-size: 0.75rem;
+        border-radius: 10px;
+    }
+
+    .mts-block-title {
+        font-size: 1.15rem;
+    }
+
+    .mts-ilus-months {
+        gap: 4px;
+    }
+
+    .mts-ilus-month-bar {
+        width: 18px;
+    }
+
+    .mts-ilus-result-bar {
+        width: 18px;
+    }
+
+    .mts-ilus-arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+}

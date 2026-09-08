@@ -1,0 +1,704 @@
+/* ================================================================
+   DatasetSection — Clean & Minimalis
+   ================================================================ */
+
+.dss {
+    padding: 8rem 6% 10rem;
+    background: #ffffff;
+    position: relative;
+}
+
+.dss-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ── HEADER ── */
+.dss-header {
+    max-width: 560px;
+    margin-bottom: 6rem;
+}
+
+.dss-overline {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #0d9488;
+    margin-bottom: 1.25rem;
+}
+
+.dss-title {
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #071a12;
+    margin: 0 0 1.25rem 0;
+}
+
+.dss-sub {
+    font-size: 1rem;
+    color: #52645b;
+    line-height: 1.8;
+    max-width: 420px;
+    margin: 0;
+}
+
+/* ── INFO CARDS ── */
+.dss-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(10, 26, 15, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.dss-card {
+    padding: 2rem 1.5rem;
+    cursor: default;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.dss-card--bordered {
+    border-right: 1px solid rgba(10, 26, 15, 0.08);
+}
+
+.dss-card:hover {
+    background: #fafbf9;
+}
+
+.dss-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #0d9488;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dss-card:hover::after {
+    transform: scaleX(1);
+}
+
+.dss-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.dss-card-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dss-card-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #0d9488;
+}
+
+.dss-card-value {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0d9488;
+    letter-spacing: -0.01em;
+}
+
+.dss-card-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #071a12;
+    margin: 0 0 0.4rem 0;
+    line-height: 1.3;
+}
+
+.dss-card-desc {
+    font-size: 0.75rem;
+    color: #6b7c73;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── SPLIT CARD ── */
+.dss-split {
+    border: 1px solid rgba(10, 26, 15, 0.08);
+    border-radius: 20px;
+    padding: 2rem 2rem 1.75rem;
+    margin-bottom: 6rem;
+    background: #fafbf9;
+}
+
+.dss-split-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 1.75rem;
+}
+
+.dss-split-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0d9488;
+    flex-shrink: 0;
+}
+
+.dss-split-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #52645b;
+}
+
+.dss-split-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dss-split-row-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.dss-split-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #3a4a40;
+}
+
+.dss-split-pct {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #071a12;
+}
+
+.dss-split-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(10, 26, 15, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dss-split-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.dss-split-fill--training {
+    background: #0d9488;
+}
+
+.dss-split-fill--testing {
+    background: #14b8a6;
+}
+
+.dss-split-detail {
+    font-size: 0.7rem;
+    color: #8a9e94;
+    margin-top: 0.4rem;
+    display: block;
+}
+
+.dss-split-note {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(10, 26, 15, 0.06);
+}
+
+.dss-split-note-icon {
+    width: 16px;
+    height: 16px;
+    stroke: #8a9e94;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.dss-split-note-text {
+    font-size: 0.75rem;
+    color: #6b7c73;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ── CODE TOGGLE ── */
+.dss-code-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1.25rem;
+    padding: 0.4rem 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #0d9488;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s ease;
+}
+
+.dss-code-toggle:hover {
+    color: #0f766e;
+}
+
+.dss-code-toggle svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* ── CODE INLINE ── */
+.dss-code-inline {
+    margin-top: 0.75rem;
+    border: 1px solid rgba(10, 26, 15, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f6f8fa;
+}
+
+.dss-code-inline-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    background: #f0f2f4;
+    border-bottom: 1px solid rgba(10, 26, 15, 0.06);
+}
+
+.dss-code-inline-icon {
+    width: 14px;
+    height: 14px;
+    color: #6b7c73;
+    flex-shrink: 0;
+}
+
+.dss-code-inline-label {
+    font-size: 0.7rem;
+    color: #6b7c73;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    flex: 1;
+}
+
+.dss-code-inline-copy {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #6b7c73;
+    background: #fff;
+    border: 1px solid rgba(10, 26, 15, 0.1);
+    border-radius: 5px;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.dss-code-inline-copy:hover {
+    color: #0d9488;
+    border-color: rgba(13, 148, 136, 0.3);
+    background: #f0fdf4;
+}
+
+.dss-code-inline-pre {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #1a2e22;
+    font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.dss-code-inline-pre code {
+    font-family: inherit;
+}
+
+/* ── DIVIDER ── */
+.dss-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.dss-divider::before,
+.dss-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(10, 26, 15, 0.07);
+}
+
+.dss-divider span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8a9e94;
+    white-space: nowrap;
+}
+
+/* ── TABLE WRAPPER ── */
+.dss-table-wrap {
+    border: 1px solid rgba(10, 26, 15, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+/* ── TABLE ── */
+.dss-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dss-table thead tr {
+    border-bottom: 1px solid rgba(10, 26, 15, 0.08);
+}
+
+.dss-table th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8a9e94;
+    background: #fafbf9;
+    white-space: nowrap;
+}
+
+.dss-table th:first-child {
+    padding-left: 1.75rem;
+}
+
+.dss-table th:last-child {
+    width: 60px;
+    text-align: center;
+    padding: 1rem 0.75rem;
+}
+
+.dss-table td {
+    padding: 1rem 1.5rem;
+    font-size: 0.82rem;
+    color: #3a4a40;
+}
+
+.dss-table td:first-child {
+    padding-left: 1.75rem;
+}
+
+.dss-table td:last-child {
+    text-align: center;
+    padding: 0.75rem 0.75rem;
+}
+
+.dss-table tbody tr {
+    border-bottom: 1px solid rgba(10, 26, 15, 0.04);
+    transition: background 0.2s ease;
+}
+
+.dss-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.dss-table tbody tr:hover {
+    background: #fafbf9;
+}
+
+.dss-tr-clickable {
+    cursor: pointer;
+}
+
+.dss-tr--expanded {
+    background: #f0fdf4 !important;
+}
+
+.dss-td-year {
+    font-weight: 600 !important;
+    color: #071a12 !important;
+}
+
+.dss-td-real {
+    font-weight: 600 !important;
+    color: #071a12 !important;
+}
+
+/* ── EXPAND BUTTON ── */
+.dss-expand-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(10, 26, 15, 0.1);
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    color: #8a9e94;
+}
+
+.dss-expand-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.dss-expand-btn:hover {
+    border-color: #0d9488;
+    color: #0d9488;
+}
+
+.dss-expand-btn--active {
+    background: #0d9488;
+    border-color: #0d9488;
+    color: #fff;
+}
+
+.dss-expand-btn--active svg {
+    transform: rotate(180deg);
+}
+
+.dss-expand-btn--active:hover {
+    background: #0f766e;
+    border-color: #0f766e;
+    color: #fff;
+}
+
+/* ── DETAIL PANEL ── */
+.dss-detail-wrap {
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.dss-detail-inner {
+    border: 1px solid rgba(13, 148, 136, 0.15);
+    border-radius: 16px;
+    padding: 1.75rem;
+    background: #fafdfb;
+}
+
+.dss-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.dss-detail-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0d9488;
+    flex-shrink: 0;
+}
+
+.dss-detail-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #52645b;
+    flex: 1;
+}
+
+.dss-detail-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: #f0fdf4;
+    color: #059669;
+}
+
+.dss-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dss-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.dss-detail-month {
+    width: 32px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #8a9e94;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.dss-detail-bar-wrap {
+    flex: 1;
+    height: 8px;
+    background: rgba(10, 26, 15, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dss-detail-bar {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #0d9488, #14b8a6);
+}
+
+.dss-detail-val {
+    width: 80px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #071a12;
+    flex-shrink: 0;
+}
+
+/* ── BADGES ── */
+.dss-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.dss-badge--up {
+    background: #f0fdf4;
+    color: #059669;
+}
+
+.dss-badge--down {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.dss-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.dss-status--training {
+    background: #f0fdf4;
+    color: #059669;
+}
+
+.dss-status--testing {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .dss-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dss-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .dss-card:nth-child(3),
+    .dss-card:nth-child(4) {
+        border-top: 1px solid rgba(10, 26, 15, 0.08);
+    }
+}
+
+@media (max-width: 768px) {
+    .dss {
+        padding: 6rem 5% 8rem;
+    }
+
+    .dss-header {
+        margin-bottom: 4rem;
+    }
+
+    .dss-table th,
+    .dss-table td {
+        padding: 0.75rem 0.8rem;
+        font-size: 0.72rem;
+    }
+
+    .dss-detail-item {
+        gap: 8px;
+    }
+
+    .dss-detail-month {
+        width: 24px;
+        font-size: 0.68rem;
+    }
+
+    .dss-detail-val {
+        width: 65px;
+        font-size: 0.7rem;
+    }
+
+    .dss-code-inline-pre {
+        font-size: 0.7rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .dss {
+        padding: 4rem 4% 6rem;
+    }
+
+    .dss-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dss-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(10, 26, 15, 0.08);
+    }
+
+    .dss-card:last-child {
+        border-bottom: none;
+    }
+
+    .dss-expand-btn {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dss *,
+    .dss *::before,
+    .dss *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

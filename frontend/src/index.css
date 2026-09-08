@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Kalau Navbar posisinya fixed/sticky, tiap section perlu offset 
+   biar konten atasnya nggak ketutup Navbar saat discroll ke sana */
+section {
+    scroll-margin-top: 80px;
+    /* sesuaikan dengan tinggi Navbar-mu */
+}

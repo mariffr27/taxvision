@@ -1,0 +1,600 @@
+/* ================================================================
+   Hero Section Styles
+   ================================================================ */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 6rem 7% 10rem;
+    /* Padding bottom lebih besar untuk divider */
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(20, 184, 166, xa), transparent 32%),
+        radial-gradient(circle at 85% 15%, rgba(15, 118, 110, 0.12), transparent 30%),
+        linear-gradient(135deg, #f8fcf9, #eef8f3);
+}
+
+/* Grid pattern overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(15, 118, 110, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 118, 110, 0.14) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 80%);
+    pointer-events: none;
+}
+
+/* Morphing shape */
+.hero-shape {
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    width: 620px;
+    height: 620px;
+    transform: translateY(-50%) rotate(-12deg);
+    border-radius: 38% 62% 58% 42% / 44% 35% 65% 56%;
+    background: linear-gradient(135deg,
+            rgba(15, 118, 110, 0.16),
+            rgba(20, 184, 166, 0.04));
+    border: 1px solid rgba(15, 118, 110, 0.12);
+    animation: heroMorph 8s ease-in-out infinite;
+}
+
+@keyframes heroMorph {
+
+    0%,
+    100% {
+        border-radius: 38% 62% 58% 42% / 44% 35% 65% 56%;
+    }
+
+    50% {
+        border-radius: 58% 42% 36% 64% / 52% 61% 39% 48%;
+    }
+}
+
+/* ===== CURVED DIVIDER ===== */
+.hero-divider {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 3;
+    transform: rotate(180deg);
+    /* Balik curve ke atas */
+}
+
+.hero-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+
+.hero-divider-shape {
+    /* Warna awal About section */
+    fill: #f8fcf9;
+}
+
+/* Inner container */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* ===== LEFT CONTENT ===== */
+.hero-content {
+    position: relative;
+}
+
+/* Badge */
+.hero-badge {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 118, 110, 0.14);
+    box-shadow: 0 10px 30px rgba(15, 118, 110, 0.08);
+    color: #0f766e;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 1.7rem;
+}
+
+.hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #14b8a6;
+    box-shadow: 0 0 0 6px rgba(20, 184, 166, 0.14);
+}
+
+/* Title */
+.hero-title {
+    font-size: clamp(3rem, 6vw, 5.7rem);
+    line-height: 0.96;
+    letter-spacing: -0.065em;
+    font-weight: 800;
+    max-width: 780px;
+    color: #071a12;
+}
+
+.hero-title-highlight {
+    display: inline-block;
+    padding: 0.02em 0.16em 0.08em;
+    margin-left: -0.08em;
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    color: white;
+    border-radius: 22px;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 20px 50px rgba(15, 118, 110, 0.22);
+}
+
+/* Description */
+.hero-desc {
+    margin-top: 1.7rem;
+    max-width: 560px;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #52645b;
+}
+
+/* Actions */
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.4rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.9rem 1.35rem;
+    transition: all 0.35s ease;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: #071a12;
+    color: white;
+    border: none;
+    box-shadow: 0 18px 35px rgba(7, 26, 18, 0.16);
+}
+
+.btn-primary:hover {
+    background: #0f766e;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    color: #0f766e;
+    background: white;
+    border: 1px solid rgba(15, 118, 110, 0.14);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(15, 118, 110, 0.1);
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* ===== RIGHT VISUAL ===== */
+.hero-visual {
+    position: relative;
+    min-height: 520px;
+}
+
+/* Dashboard panel */
+.hero-panel {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(440px, 100%);
+    padding: 1.2rem;
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 35px 90px rgba(15, 118, 110, 0.18);
+    backdrop-filter: blur(20px);
+}
+
+.hero-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.hero-panel-title {
+    font-size: 0.86rem;
+    font-weight: 800;
+    color: #071a12;
+}
+
+.hero-panel-code {
+    font-size: 0.68rem;
+    color: #52645b;
+}
+
+/* Chart area */
+.hero-chart {
+    height: 210px;
+    border-radius: 28px;
+    background:
+        linear-gradient(to top, rgba(15, 118, 110, 0.08), transparent),
+        repeating-linear-gradient(to right,
+            transparent 0 54px,
+            rgba(15, 118, 110, 0.08) 55px);
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.hero-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Stats grid */
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+}
+
+.hero-stat {
+    padding: 1rem;
+    border-radius: 22px;
+    background: #fff;
+    border: 1px solid rgba(15, 118, 110, 0.1);
+}
+
+.hero-stat-label {
+    display: block;
+    color: #52645b;
+    font-size: 0.65rem;
+    margin-bottom: 0.3rem;
+}
+
+.hero-stat-value {
+    font-size: 1rem;
+    color: #0f766e;
+    font-weight: 700;
+}
+
+/* Floating card */
+.hero-floating-card {
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    width: 210px;
+    padding: 1rem;
+    border-radius: 26px;
+    background: #071a12;
+    color: white;
+    box-shadow: 0 25px 60px rgba(7, 26, 18, 0.22);
+    animation: heroFloat 4s ease-in-out infinite;
+}
+
+.hero-floating-label {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.68rem;
+}
+
+.hero-floating-value {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* ================================================================
+   Responsive Hero
+   ================================================================ */
+
+/* Laptop kecil / tablet landscape */
+@media (max-width: 1100px) {
+    .hero {
+        padding: 6rem 5% 10rem;
+    }
+
+    .hero-inner {
+        gap: 2.8rem;
+        grid-template-columns: 1fr 0.9fr;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 5.8vw, 4.7rem);
+    }
+
+    .hero-shape {
+        right: -220px;
+        width: 560px;
+        height: 560px;
+    }
+
+    .hero-panel {
+        width: min(400px, 100%);
+    }
+
+    .hero-divider svg {
+        height: 80px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .hero {
+        min-height: auto;
+        padding: 7rem 6% 8rem;
+        align-items: flex-start;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .hero-content {
+        max-width: 720px;
+    }
+
+    .hero-title {
+        max-width: 680px;
+        font-size: clamp(3rem, 9vw, 5rem);
+    }
+
+    .hero-desc {
+        max-width: 620px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: auto;
+        padding-bottom: 3rem;
+    }
+
+    .hero-panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+
+    .hero-floating-card {
+        left: auto;
+        right: 8%;
+        bottom: 0;
+    }
+
+    .hero-shape {
+        right: -260px;
+        top: 58%;
+        width: 520px;
+        height: 520px;
+        opacity: 0.75;
+    }
+
+    .hero-divider svg {
+        height: 60px;
+    }
+}
+
+/* Mobile besar */
+@media (max-width: 640px) {
+    .hero {
+        padding: 6.5rem 5% 6rem;
+    }
+
+    .hero::before {
+        background-size: 42px 42px;
+        opacity: 0.65;
+    }
+
+    .hero-inner {
+        gap: 2.8rem;
+    }
+
+    .hero-badge {
+        max-width: 100%;
+        font-size: 0.64rem;
+        letter-spacing: 1.2px;
+        padding: 0.5rem 0.78rem;
+        line-height: 1.4;
+    }
+
+    .hero-title {
+        font-size: clamp(2.45rem, 13vw, 3.8rem);
+        line-height: 1;
+        letter-spacing: -0.055em;
+    }
+
+    .hero-title-highlight {
+        border-radius: 16px;
+        padding: 0.02em 0.15em 0.07em;
+    }
+
+    .hero-desc {
+        margin-top: 1.35rem;
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        margin-top: 1.9rem;
+        gap: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.95rem 1.2rem;
+    }
+
+    .hero-panel {
+        padding: 1rem;
+        border-radius: 28px;
+    }
+
+    .hero-panel-head {
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+
+    .hero-panel-title {
+        font-size: 0.8rem;
+    }
+
+    .hero-panel-code {
+        font-size: 0.64rem;
+        white-space: nowrap;
+    }
+
+    .hero-chart {
+        height: 170px;
+        border-radius: 22px;
+        padding: 0.75rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 0.65rem;
+    }
+
+    .hero-stat {
+        padding: 0.85rem 0.95rem;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero-stat-label {
+        margin-bottom: 0;
+    }
+
+    .hero-floating-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 22px;
+    }
+
+    .hero-floating-value {
+        font-size: 1.35rem;
+    }
+
+    .hero-shape {
+        right: -300px;
+        top: 68%;
+        width: 470px;
+        height: 470px;
+        opacity: 0.55;
+    }
+
+    .hero-divider svg {
+        height: 50px;
+    }
+}
+
+/* Mobile kecil */
+@media (max-width: 420px) {
+    .hero {
+        padding: 6rem 1rem 5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.15rem, 14vw, 3.1rem);
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+    }
+
+    .hero-badge {
+        font-size: 0.58rem;
+        letter-spacing: 0.9px;
+    }
+
+    .hero-panel {
+        border-radius: 24px;
+    }
+
+    .hero-chart {
+        height: 150px;
+    }
+
+    .hero-stat-value {
+        font-size: 0.95rem;
+    }
+
+    .hero-divider svg {
+        height: 40px;
+    }
+}
+
+/* Aksesibilitas: matikan animasi kalau user memilih reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-shape,
+    .hero-floating-card {
+        animation: none;
+    }
+
+    .btn,
+    .btn-icon {
+        transition: none;
+    }
+}

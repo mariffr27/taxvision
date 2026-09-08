@@ -1,0 +1,57 @@
+.model-prediksi-page {
+    width: 100%;
+}
+
+.model-prediksi-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.model-prediksi-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #1f2937;
+}
+
+.model-prediksi-header p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.alert {
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.model-prediksi-form {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .model-prediksi-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .model-prediksi-header button {
+        width: 100%;
+    }
+}

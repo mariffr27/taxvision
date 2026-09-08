@@ -1,0 +1,572 @@
+/* ================================================================
+   Features (Orb Cards) Section Styles - Seamless Transition
+   ================================================================ */
+
+.features {
+    padding: 8rem 6%;
+    margin-top: -2px;
+    /* Overlap dengan divider */
+    background: #fafbf9;
+    /* SAMA dengan .about-divider-shape fill */
+    position: relative;
+    overflow: hidden;
+}
+
+.features-bg-blob-1,
+.features-bg-blob-2 {
+    opacity: 0.05;
+    /* sangat lembut */
+    background: radial-gradient(circle, rgba(15, 118, 110, 0.05), rgba(15, 118, 110, 0.03));
+}
+
+/* Overlay gradient dari atas untuk blend */
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.features-to-data-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.features-to-data-divider svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+@media (max-width: 968px) {
+    .features-to-data-divider svg {
+        height: 50px;
+    }
+}
+
+@media (max-width: 640px) {
+    .features-to-data-divider svg {
+        height: 35px;
+    }
+}
+
+/* Grid pattern yang memudar dari atas */
+.features::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(10, 26, 15, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 26, 15, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            /* Tidak terlihat di awal */
+            rgba(0, 0, 0, 0.3) 30%,
+            /* Mulai muncul */
+            rgba(0, 0, 0, 0.5) 100%
+            /* Solid */
+        );
+    -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.3) 30%,
+            rgba(0, 0, 0, 0.5) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== Background Decorations ===== */
+.features-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.features-bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    will-change: transform;
+}
+
+.features-bg-blob-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #0d9488, #06b6d4);
+    top: -10%;
+    right: -5%;
+    opacity: 0.06;
+    animation: featuresBlobFloat 20s ease-in-out infinite;
+}
+
+.features-bg-blob-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #6366f1, #8b5cf6);
+    bottom: -8%;
+    left: -5%;
+    opacity: 0.04;
+    animation: featuresBlobFloat 25s ease-in-out infinite reverse;
+}
+
+@keyframes featuresBlobFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+}
+
+.features-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(10, 26, 15, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 26, 15, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);
+    opacity: 0.5;
+}
+
+/* Subtle ambient light */
+.features-ambient {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(13, 148, 136, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.features-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== SECTION HEADER ===== */
+.features-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 5rem;
+}
+
+.features-eyebrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.features-eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    background: #0d9488;
+    border-radius: 50%;
+    animation: featuresPulse 2s ease-in-out infinite;
+}
+
+@keyframes featuresPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 0.4;
+    }
+}
+
+.features-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #0d9488;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.06), rgba(6, 182, 212, 0.06));
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(13, 148, 136, 0.12);
+}
+
+.features-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #071a12;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.8rem;
+}
+
+.features-sub {
+    font-size: 0.95rem;
+    color: #4a5d54;
+    line-height: 1.7;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* ===== ORB GRID ===== */
+.features-orb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2rem;
+    perspective: 1000px;
+}
+
+/* ===== ORB CARD ===== */
+.features-orb-card {
+    position: relative;
+    cursor: pointer;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: transparent;
+}
+
+.features-orb-card:hover {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(10, 26, 15, 0.04);
+}
+
+.features-orb-card.active {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 40px rgba(10, 26, 15, 0.06);
+}
+
+/* ===== ORB VISUAL ===== */
+/* ===== ORB VISUAL ===== */
+.features-orb-visual {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.features-orb-card:hover .features-orb-visual {
+    transform: translateY(-8px);
+}
+
+/* Circle */
+.features-orb-circle {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid rgba(10, 26, 15, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+    box-shadow:
+        0 4px 12px rgba(10, 26, 15, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.features-orb-circle svg {
+    width: 36px;
+    height: 36px;
+    stroke: currentColor;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Warna ikon default (state tidak aktif) */
+.features-orb-circle.bg-gradient-to-br.from-emerald-400 {
+    color: #059669;
+}
+
+.features-orb-circle.bg-gradient-to-br.from-violet-400 {
+    color: #7c3aed;
+}
+
+.features-orb-circle.bg-gradient-to-br.from-blue-400 {
+    color: #3b82f6;
+}
+
+.features-orb-circle.bg-gradient-to-br.from-orange-400 {
+    color: #f97316;
+}
+
+.features-orb-circle.bg-gradient-to-br.from-rose-400 {
+    color: #e11d48;
+}
+
+.features-orb-circle.bg-gradient-to-br.from-indigo-400 {
+    color: #4f46e5;
+}
+
+/* ===== FIX: saat active, background lingkaran berubah jadi gradient
+   sesuai warna fitur masing-masing, ikon tetap putih agar kontras ===== */
+.features-orb-card.active .features-orb-circle {
+    color: white !important;
+    border-color: transparent;
+    transform: scale(1.06);
+}
+
+.features-orb-card.active .features-orb-circle.bg-gradient-to-br.from-emerald-400.to-teal-600 {
+    background: linear-gradient(135deg, #34d399, #0d9488);
+    box-shadow: 0 20px 40px rgba(13, 148, 136, 0.3), 0 0 0 4px rgba(13, 148, 136, 0.08);
+}
+
+.features-orb-card.active .features-orb-circle.bg-gradient-to-br.from-violet-400.to-purple-600 {
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3), 0 0 0 4px rgba(124, 58, 237, 0.08);
+}
+
+.features-orb-card.active .features-orb-circle.bg-gradient-to-br.from-blue-400.to-cyan-600 {
+    background: linear-gradient(135deg, #60a5fa, #0891b2);
+    box-shadow: 0 20px 40px rgba(8, 145, 178, 0.3), 0 0 0 4px rgba(8, 145, 178, 0.08);
+}
+
+.features-orb-card.active .features-orb-circle.bg-gradient-to-br.from-orange-400.to-amber-600 {
+    background: linear-gradient(135deg, #fb923c, #d97706);
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.3), 0 0 0 4px rgba(217, 119, 6, 0.08);
+}
+
+.features-orb-card.active .features-orb-circle.bg-gradient-to-br.from-rose-400.to-pink-600 {
+    background: linear-gradient(135deg, #fb7185, #db2777);
+    box-shadow: 0 20px 40px rgba(219, 39, 119, 0.3), 0 0 0 4px rgba(219, 39, 119, 0.08);
+}
+
+.features-orb-card.active .features-orb-circle.bg-gradient-to-br.from-indigo-400.to-blue-600 {
+    background: linear-gradient(135deg, #818cf8, #2563eb);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3), 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+/* Orbit ring — ikut warna aktif biar lebih menyatu */
+.features-orb-ring {
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(13, 148, 136, 0.12);
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.features-orb-card.active .features-orb-ring {
+    border-color: rgba(13, 148, 136, 0.35);
+    border-style: solid;
+    box-shadow: 0 0 24px rgba(13, 148, 136, 0.1);
+}
+
+/* Particles */
+.features-orb-particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #14b8a6;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
+}
+
+.features-orb-card.active .features-orb-particle {
+    opacity: 1;
+    animation: featuresParticleFloat 3s ease-in-out infinite;
+}
+
+.features-orb-particle:nth-child(3) {
+    top: -8px;
+    left: 40%;
+    animation-delay: 0s;
+}
+
+.features-orb-particle:nth-child(4) {
+    top: 50%;
+    right: -10px;
+    animation-delay: -1s;
+}
+
+.features-orb-particle:nth-child(5) {
+    bottom: -8px;
+    left: 55%;
+    animation-delay: -2s;
+}
+
+@keyframes featuresParticleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(8px, -10px) scale(2);
+        opacity: 1;
+    }
+}
+
+/* ===== ORB TITLE ===== */
+.features-orb-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #071a12;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    transition: color 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+.features-orb-card.active .features-orb-title {
+    color: #0d9488;
+}
+
+/* ===== ORB PANEL (expandable) ===== */
+.features-orb-panel {
+    background: #ffffff;
+    border: 1px solid rgba(10, 26, 15, 0.04);
+    border-radius: 20px;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+    margin-top: 0.5rem;
+}
+
+.features-orb-card.active .features-orb-panel {
+    box-shadow:
+        0 12px 32px rgba(10, 26, 15, 0.06),
+        0 0 0 1px rgba(13, 148, 136, 0.1);
+}
+
+.features-orb-panel p {
+    font-size: 0.85rem;
+    color: #4a5d54;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+/* ===== TAGS ===== */
+.features-orb-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.features-orb-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0d9488;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    border-radius: 999px;
+    background: rgba(13, 148, 136, 0.04);
+    transition: all 0.3s ease;
+}
+
+.features-orb-tag:hover {
+    background: rgba(13, 148, 136, 0.1);
+    border-color: rgba(13, 148, 136, 0.3);
+    transform: translateY(-1px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .features-orb-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features {
+        padding: 6rem 5%;
+    }
+
+    .features-orb-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .features-header {
+        margin-bottom: 3.5rem;
+    }
+
+    .features-title {
+        font-size: 1.8rem;
+    }
+
+    .features-orb-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .features {
+        padding: 4rem 4%;
+    }
+
+    .features-orb-visual {
+        width: 100px;
+        height: 100px;
+    }
+
+    .features-orb-circle svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .features *,
+    .features *::before,
+    .features *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

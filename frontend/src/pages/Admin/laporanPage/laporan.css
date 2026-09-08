@@ -1,0 +1,235 @@
+.laporan-page {
+    width: 100%;
+}
+
+.laporan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.laporan-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #1f2937;
+}
+
+.laporan-header p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.laporan-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.laporan-filter {
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 0.8fr 0.8fr auto;
+    gap: 14px;
+    align-items: end;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
+
+.laporan-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.laporan-filter-field label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.laporan-filter-field select,
+.laporan-filter-field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #1f2937;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.laporan-filter-field select:focus,
+.laporan-filter-field input:focus {
+    border-color: #0f5132;
+    box-shadow: 0 0 0 3px rgba(15, 81, 50, 0.12);
+}
+
+.laporan-filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.laporan-title-box {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 16px;
+}
+
+.laporan-title-box h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.laporan-title-box p {
+    margin: 6px 0 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.laporan-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.laporan-summary-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.laporan-summary-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.laporan-summary-card strong {
+    display: block;
+    color: #0f5132;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.laporan-toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 360px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+}
+
+.laporan-toast-success {
+    background-color: #16a34a;
+    color: #ffffff;
+}
+
+.laporan-toast-error {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.laporan-toast button {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .laporan-filter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .laporan-filter-actions {
+        grid-column: span 2;
+    }
+
+    .laporan-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .laporan-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .laporan-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .laporan-actions .btn {
+        width: 100%;
+    }
+
+    .laporan-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .laporan-filter-actions {
+        grid-column: auto;
+        flex-direction: column;
+    }
+
+    .laporan-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .laporan-print-area,
+    .laporan-print-area * {
+        visibility: visible;
+    }
+
+    .laporan-print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .laporan-header,
+    .laporan-filter,
+    .laporan-actions,
+    .laporan-toast {
+        display: none !important;
+    }
+
+    .laporan-title-box,
+    .laporan-summary-card {
+        box-shadow: none;
+    }
+}

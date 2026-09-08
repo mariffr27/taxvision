@@ -1,0 +1,218 @@
+/* ====== Tokens (selaras dengan tema hijau-putih halaman lain) ====== */
+.btn {
+    --btn-green: #0f5132;
+    --btn-green-dark: #0b3d26;
+    --btn-green-light: #15803d;
+    --btn-green-soft: #ecfdf3;
+
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease,
+        color 0.18s ease, box-shadow 0.18s ease, transform 0.08s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    position: relative;
+
+    /* TAMBAHAN PENTING */
+    box-sizing: border-box;
+    min-height: 38px;
+    min-width: max-content;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(15, 81, 50, 0.45);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-label {
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ====== Size ====== */
+.btn-small {
+    padding: 7px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+.btn-medium {
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+.btn-large {
+    padding: 13px 22px;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+/* ====== Variant: primary (hijau solid, sedikit gradient untuk kesan "hidup") ====== */
+.btn-primary {
+    background: linear-gradient(180deg, var(--btn-green-light) 0%, var(--btn-green) 100%);
+    color: #ffffff;
+    box-shadow: 0 1px 2px rgba(15, 81, 50, 0.15), 0 4px 10px rgba(15, 81, 50, 0.18);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(180deg, var(--btn-green) 0%, var(--btn-green-dark) 100%);
+    box-shadow: 0 2px 4px rgba(15, 81, 50, 0.18), 0 6px 14px rgba(15, 81, 50, 0.22);
+}
+
+.btn-primary:active:not(:disabled) {
+    background: var(--btn-green-dark);
+    box-shadow: 0 1px 2px rgba(15, 81, 50, 0.18) inset;
+}
+
+/* ====== Variant: secondary (netral, clean) ====== */
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border: 1px solid #e5e7eb;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #e5e7eb;
+    border-color: #d1d5db;
+}
+
+.btn-secondary:active:not(:disabled) {
+    background-color: #d1d5db;
+}
+
+/* ====== Variant: warning ====== */
+.btn-warning {
+    background-color: #facc15;
+    color: #78350f;
+}
+
+.btn-warning:hover:not(:disabled) {
+    background-color: #eab308;
+}
+
+.btn-warning:active:not(:disabled) {
+    background-color: #ca8a04;
+}
+
+/* ====== Variant: danger ====== */
+.btn-danger {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background-color: #dc2626;
+}
+
+.btn-danger:active:not(:disabled) {
+    background-color: #b91c1c;
+}
+
+/* ====== Variant: outline (hijau, transparan) ====== */
+.btn-outline {
+    background-color: transparent;
+    color: var(--btn-green);
+    border: 1.5px solid var(--btn-green);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background-color: var(--btn-green);
+    color: #ffffff;
+}
+
+.btn-outline:active:not(:disabled) {
+    background-color: var(--btn-green-dark);
+    border-color: var(--btn-green-dark);
+}
+
+/* ====== Variant: ghost (baru — untuk aksi sekunder yang sangat ringan, mis. di dalam tabel) ====== */
+.btn-ghost {
+    background-color: transparent;
+    color: var(--btn-green);
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background-color: var(--btn-green-soft);
+}
+
+.btn-ghost:active:not(:disabled) {
+    background-color: #d6f3e3;
+}
+
+/* ====== Disabled ====== */
+.btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ====== Loading spinner ====== */
+.btn-loading {
+    cursor: progress;
+}
+
+.btn-spinner {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #ffffff;
+    animation: btn-spin 0.6s linear infinite;
+    flex-shrink: 0;
+}
+
+.btn-secondary .btn-spinner,
+.btn-outline .btn-spinner,
+.btn-ghost .btn-spinner,
+.btn-warning .btn-spinner {
+    border: 2px solid rgba(15, 81, 50, 0.25);
+    border-top-color: var(--btn-green);
+}
+
+@keyframes btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+
+    .btn-spinner {
+        animation-duration: 1.1s;
+    }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 480px) {
+    .btn-large {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+}

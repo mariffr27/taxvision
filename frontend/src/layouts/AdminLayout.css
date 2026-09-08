@@ -1,0 +1,45 @@
+.admin-layout {
+    min-height: 100vh;
+    display: flex;
+    background-color: #f3f6f4;
+}
+
+.admin-main {
+    flex: 1;
+    min-height: 100vh;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-content {
+    padding: 24px;
+    flex: 1;
+}
+
+.admin-overlay {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .admin-content {
+        padding: 18px;
+    }
+
+    .admin-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(15, 23, 42, 0.45);
+        z-index: 90;
+    }
+
+    .admin-overlay.show {
+        display: block;
+    }
+}
